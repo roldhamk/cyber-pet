@@ -75,11 +75,11 @@ class Pet {
     }
     checkThirst(){
         if (this.thirstLevel >= 0 && this.thirstLevel <=10) {
-            return `I'm thirsty...give me a drink! Thirst level: ${this.thirstLevel}`
-        } else if (this.thirstLevel >= 11 && this.thirstLevel <= 15) {
-            return `I'm pretty hydrated...but I could drink more! Thirst level: ${this.thirstLevel} `
+            console.log(`I'm thirsty...give me a drink! Thirst level: ${this.thirstLevel}`)
+        } else if (this.thirstLevel >= 11 && this.thirstLevel <= 19) {
+            console.log(`I'm pretty hydrated...but I could drink more! Thirst level: ${this.thirstLevel}`)
         } else {
-            return `No more water please!`
+            console.log(`No more water please, I'm not thirsty! Thirst level: ${this.thirstLevel}`)
         }
     }
     checkExerciseLevel(){
@@ -91,7 +91,4 @@ const lefou = new Pet("Lefou"); // creating pet
 // console.log(lefou) // printing pet info to console
 // console.log(lefou.checkHunger()); // expect "I'm full!" to print
 // console.log(lefou.checkThirst()); // expect "No more water please!" to print
-lefou.levelUp();
-lefou.levelUp();
-lefou.levelUp();
-
+lefou.checkThirst();
