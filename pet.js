@@ -1,11 +1,11 @@
 class Pet {
     constructor(name){
         this._name = name;
-        this._age = 8;
+        this._age = 1;
         this._maxAge = 10;
-        this._hungerLevel = 18;
-        this._thirstLevel = 19;
-        this._isBored = false;
+        this._hungerLevel = 20;
+        this._thirstLevel = 20;
+        this._isBored = true;
         this._exerciseLevel = 0;
         this._maxExerciseLevel = 20;
         this._isAlive = true;
@@ -56,7 +56,9 @@ class Pet {
         }
     }
     play(){
-        
+        this._thirstLevel--;
+        this._hungerLevel--;
+        this._isBored = false;
     }
     exercise(){
 
@@ -71,11 +73,11 @@ class Pet {
     }
     checkHunger(){
         if (this.hungerLevel >= 0 && this.hungerLevel <=10) {
-            return `I'm hungry...feed me! Hunger level: ${this.hungerLevel}`
+            console.log(`I'm hungry...feed me! Hunger level: ${this.hungerLevel}`)
         } else if (this.hungerLevel >= 11 && this.hungerLevel <= 15) {
-            return `I'm pretty full...but I could eat more! Hunger level: ${this.hungerLevel} `
+            console.log(`I'm pretty full...but I could eat more! Hunger level: ${this.hungerLevel}`)
         } else {
-            return `I'm full, stop feeding me!`
+            console.log(`I'm full, stop feeding me! Hunger level: ${this.hungerLevel}`)
         }
     }
     checkThirst(){
@@ -90,13 +92,20 @@ class Pet {
     checkExerciseLevel(){
 
     }
+    checkBoredom(){
+    
+    }
+    
 }
 
 const lefou = new Pet("Lefou"); // creating pet
 // console.log(lefou) // printing pet info to console
 // console.log(lefou.checkHunger()); // expect "I'm full!" to print
 // console.log(lefou.checkThirst()); // expect "No more water please!" to print
-lefou.giveDrink();
-lefou.giveDrink();
+
+console.log(lefou)
+lefou.play();
+lefou.play();
+console.log(lefou)
 
 
