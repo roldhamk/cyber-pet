@@ -1,0 +1,57 @@
+When creating a pet, give one parameter:
+        name
+
+hunger, thirst and bored are set:
+
+hunger: 20
+thirst: 20 
+bored: false
+exerciseLevel: 0
+maxExerciseLevel: 20
+alive: true
+age: 1
+maxAge: 10
+
+METHODS
+
+feed()
+    hunger++;
+giveDrink()
+    thirst++
+play()
+    if bored = true 
+        return yay! let's play!
+        bored = false; 
+    else 
+        return I don't feel like playing...
+exercise()
+    if exerciseLevel <= 0 && exerciseLevel <= 19
+        exerciseLevel++
+        hunger--
+        thirst--
+    else 
+        return I've reached max buff! 
+levelUp()
+    if age <= 10
+        age++
+    else alive: false
+
+checkHunger()
+checkThirst()
+checkExerciseLevel()
+
+
+IF/ELSE 
+
+if hunger < 0 && thirst < 0 
+ alive: false
+
+if hunger >= 0 && hunger <=10
+    return I'm hungry...
+
+if hunger >= 11 && hunger <= 15
+    return I'm pretty full...
+
+if hunger => 15 && hunger <=20
+    return I'm full! 
+
