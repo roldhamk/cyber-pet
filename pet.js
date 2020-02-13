@@ -4,7 +4,7 @@ class Pet {
         this._age = 8;
         this._maxAge = 10;
         this._hungerLevel = 18;
-        this._thirstLevel = 20;
+        this._thirstLevel = 19;
         this._isBored = false;
         this._exerciseLevel = 0;
         this._maxExerciseLevel = 20;
@@ -48,7 +48,12 @@ class Pet {
         }
     }
     giveDrink(){
-
+        if (this.thirstLevel <= 19) {
+            this._thirstLevel++;
+            console.log(`Hydration increasing! Thirst level is now ${this.thirstLevel}.`)
+        } else {
+            console.log(`No more water please, I'm not thirsty! Thirst level: ${this.thirstLevel}.`)
+        }
     }
     play(){
         
@@ -91,4 +96,7 @@ const lefou = new Pet("Lefou"); // creating pet
 // console.log(lefou) // printing pet info to console
 // console.log(lefou.checkHunger()); // expect "I'm full!" to print
 // console.log(lefou.checkThirst()); // expect "No more water please!" to print
-lefou.checkThirst();
+lefou.giveDrink();
+lefou.giveDrink();
+
+
