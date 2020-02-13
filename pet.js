@@ -6,6 +6,7 @@ class Pet {
         this._hungerLevel = 20;
         this._thirstLevel = 20;
         this._isBored = true;
+        this._boredomLevel = 10;
         this._exerciseLevel = 0;
         this._maxExerciseLevel = 20;
         this._isAlive = true;
@@ -38,6 +39,9 @@ class Pet {
     get isAlive(){
         return this._isAlive;
     }
+    get boredomLevel(){
+        return this._boredomLevel;
+    }
     // METHODS
     feed(){
         if (this.hungerLevel <= 19) {
@@ -56,9 +60,17 @@ class Pet {
         }
     }
     play(){
-        this._thirstLevel--;
-        this._hungerLevel--;
-        this._isBored = false;
+        if (this.boredomLevel <= 10 && this.boredomLevel > 0) {
+            this._thirstLevel--;
+            this._hungerLevel--;
+            this._isBored = false;
+            this._boredomLevel++;
+            console.log(`I'm having fun! Boredom level is now ${this.boredomLevel}`)
+        } else if (this.boredomLevel === 0){
+            console.log(`Too late! I've died of boredom...`)
+        } else {
+            console.log(`I don't feel like playing. Boredom level is ${this.boredomLevel}`)
+        }
     }
     exercise(){
 
@@ -93,19 +105,18 @@ class Pet {
 
     }
     checkBoredom(){
-    
+        if (this.boredomLevel <= 10 && this.boredomLevel > 5) {
+            console.log(`I'm not bored at all! Boredom level is ${this.boredomLevel}`)
+        } else if (this.boredomLevel <= 4 && this._boredomLevel > 1){
+            console.log(`I'm kinda bored, play with me!`)
+        } else {
+            console.log(`Too late, I died of boredom`)
     }
-    
+}
 }
 
 const lefou = new Pet("Lefou"); // creating pet
 // console.log(lefou) // printing pet info to console
 // console.log(lefou.checkHunger()); // expect "I'm full!" to print
 // console.log(lefou.checkThirst()); // expect "No more water please!" to print
-
-console.log(lefou)
-lefou.play();
-lefou.play();
-console.log(lefou)
-
-
+lefou.checkBoredom();
