@@ -7,7 +7,7 @@ class Pet {
         this._thirstLevel = 20;
         this._isBored = true;
         this._boredomLevel = 10;
-        this._exerciseLevel = 19;
+        this._exerciseLevel = 18;
         this._maxExerciseLevel = 20;
         this._isAlive = true;
     }
@@ -73,7 +73,14 @@ class Pet {
         }
     }
     exercise(){
+        if (this.exerciseLevel > 0 && this.exerciseLevel < this.maxExerciseLevel) {
+            this._exerciseLevel++;
+            console.log(`I feel fit! Exercise level is now ${this.exerciseLevel}`)
+        } else {
+            console.log(`I don't feel like exercising. Exercise level: ${this.exerciseLevel}`)
+        }
     }
+
     levelUp() {
         this._age++;
         if (this.age > this.maxAge){
@@ -122,4 +129,6 @@ const lefou = new Pet("Lefou"); // creating pet
 // console.log(lefou) // printing pet info to console
 // console.log(lefou.checkHunger()); // expect "I'm full!" to print
 // console.log(lefou.checkThirst()); // expect "No more water please!" to print
-lefou.checkExerciseLevel()
+lefou.exercise();
+lefou.exercise();
+lefou.exercise();
