@@ -84,6 +84,7 @@ class Pet {
     levelUp() {
         this._age++;
         if (this.age > this.maxAge){
+            this._isAlive = false;
             console.log(`Max age reached! ${this.name} has died...`)
         } else if (this.age <= this.maxAge) {
             console.log(`Happy birthday to me! I'm ${this.age} years old.`);
@@ -129,6 +130,3 @@ const lefou = new Pet("Lefou"); // creating pet
 // console.log(lefou) // printing pet info to console
 // console.log(lefou.checkHunger()); // expect "I'm full!" to print
 // console.log(lefou.checkThirst()); // expect "No more water please!" to print
-lefou.exercise();
-lefou.exercise();
-lefou.exercise();
